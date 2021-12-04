@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
+
+namespace HeavenSolutions
+{
+    [TestFixture]
+    public class TestClass
+    {
+        [Test]
+        public void TestMethod()
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = "https://politrip.com/account/sign-up";
+            IWebElement emailTextField = driver.FindElement(By.XPath(".//*[@id = 'email']"));
+            emailTextField.SendKeys("Selenium C#");
+            driver.Quit();
+        }
+   
+
+    }
+}
